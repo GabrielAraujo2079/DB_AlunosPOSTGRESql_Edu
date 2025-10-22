@@ -2,9 +2,13 @@
 👥 INTEGRANTES:
 
 GABRIEL ARAUJO SANTOS (2508678)
+
 Paulo André Silva de Lima (2512630)
+
 Paulo Vitor Macieira Carvalho (2508725)
+
 Geovanna Cristina dos Santos (2504583)
+
 Leonardo da Graça Moraes (2512238)
 
 🧱 Estrutura do Banco de Dados
