@@ -40,8 +40,6 @@ CREATE TABLE Alunos (
     Idade INTEGER
 );
 Tabela de Materias
-sql
-Copiar código
 CREATE TABLE Materias (
     Id_Materia SERIAL PRIMARY KEY,
     NomeMateria VARCHAR(20)
