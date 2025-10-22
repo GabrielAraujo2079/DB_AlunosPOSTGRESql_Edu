@@ -7,57 +7,57 @@
 
 =========================================================================================================
   Estrutura do banco de dados:
-  -- Tabela de Alunos
-CREATE TABLE Alunos (
-    Id_Aluno SERIAL PRIMARY KEY,
-    Nome VARCHAR(100),
-    Serie CHAR(3),
-    Idade INTEGER
-);
-
--- Tabela de Materias
-CREATE TABLE Materias (
-    Id_Materia SERIAL PRIMARY KEY,
-    NomeMateria VARCHAR(20)
-);
-
--- Tabela de relacionamento entre Alunos e Materias
-CREATE TABLE Aluno_Materia (
-    id_aluno INT REFERENCES Alunos(Id_Aluno),
-    id_materias INT REFERENCES Materias(Id_Materia),
-    nota NUMERIC
-);
-
--- Inserindo aluno
-INSERT INTO Alunos(Nome, Serie, Idade) 
-VALUES ('Paulo', '3C', 20);
-
--- Inserindo matérias
-INSERT INTO Materias(NomeMateria) 
-VALUES ('Matematica'), ('Geografica'), ('Historia');
-
--- Inserindo nota do aluno na matéria
-INSERT INTO Aluno_Materia(id_aluno, id_materias, nota) 
-VALUES (1, 1, 10);
-
--- Consultas
-SELECT * FROM Alunos;
-SELECT * FROM Materias;
-SELECT * FROM Aluno_Materia;
-
--- Consulta com JOIN para exibir dados completos
-SELECT 
-    a.Id_Aluno,
-    a.Nome AS NomeAluno,
-    a.Serie,
-    a.Idade,
-    m.Id_Materia,
-    m.NomeMateria,
-    am.nota
-FROM Aluno_Materia am
-INNER JOIN Alunos a ON am.id_aluno = a.Id_Aluno
-INNER JOIN Materias m ON am.id_materias = m.Id_Materia
-ORDER BY a.Id_Aluno, m.Id_Materia;
+    -- Tabela de Alunos
+  CREATE TABLE Alunos (
+      Id_Aluno SERIAL PRIMARY KEY,
+      Nome VARCHAR(100),
+      Serie CHAR(3),
+      Idade INTEGER
+  );
+  
+  -- Tabela de Materias
+  CREATE TABLE Materias (
+      Id_Materia SERIAL PRIMARY KEY,
+      NomeMateria VARCHAR(20)
+  );
+  
+  -- Tabela de relacionamento entre Alunos e Materias
+  CREATE TABLE Aluno_Materia (
+      id_aluno INT REFERENCES Alunos(Id_Aluno),
+      id_materias INT REFERENCES Materias(Id_Materia),
+      nota NUMERIC
+  );
+  
+  -- Inserindo aluno
+  INSERT INTO Alunos(Nome, Serie, Idade) 
+  VALUES ('Paulo', '3C', 20);
+  
+  -- Inserindo matérias
+  INSERT INTO Materias(NomeMateria) 
+  VALUES ('Matematica'), ('Geografica'), ('Historia');
+  
+  -- Inserindo nota do aluno na matéria
+  INSERT INTO Aluno_Materia(id_aluno, id_materias, nota) 
+  VALUES (1, 1, 10);
+  
+  -- Consultas
+  SELECT * FROM Alunos;
+  SELECT * FROM Materias;
+  SELECT * FROM Aluno_Materia;
+  
+  -- Consulta com JOIN para exibir dados completos
+  SELECT 
+      a.Id_Aluno,
+      a.Nome AS NomeAluno,
+      a.Serie,
+      a.Idade,
+      m.Id_Materia,
+      m.NomeMateria,
+      am.nota
+  FROM Aluno_Materia am
+  INNER JOIN Alunos a ON am.id_aluno = a.Id_Aluno
+  INNER JOIN Materias m ON am.id_materias = m.Id_Materia
+  ORDER BY a.Id_Aluno, m.Id_Materia;
  
  🎒 1. PRÉ-REQUISITOS
 
@@ -70,12 +70,12 @@ Antes de mais nada, você precisa ter instalado:
 
 Seu projeto deve ter essa carinha:
 
-/faculdadepost
-├── src/
-│   └── index.ts       ← onde tudo vai acontecer
-├── dist/              ← vai ser criado depois do build
-├── package.json
-├── tsconfig.json
+  /faculdadepost
+  ├── src/
+  │   └── index.ts       ← onde tudo vai acontecer
+  ├── dist/              ← vai ser criado depois do build
+  ├── package.json
+  ├── tsconfig.json
 
 
 🛠️ 3. INSTALANDO AS LIBS
